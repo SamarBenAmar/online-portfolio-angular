@@ -1,1 +1,35 @@
-<p>blogs works!</p>
+<div class="section" id="blogs">
+    <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Blogs</div>
+
+        
+        <div class="row" >
+            <ng-container class="container" *ngFor="let blog of blogs">
+                <div class="col-md-12 col-sm-6 animate-box"   data-aos="fade-up"  >
+                    <div class="blog-entry">
+                        <div class="card" >
+                            
+                            <div class="card mb-0" class="card-body" >
+                                <p style="font-family: montserrat; ">{{blog.date}}</p>
+                                <h3 class="card-title" style="font-family: montserrat; ">{{blog.title}}</h3>
+                                <p style="font-family: montserrat; ">{{blog.desc}}</p>
+
+                               
+
+                               
+                               
+                                
+                                <a href={{blog.link}} target="_blank" class="btn btn-primary ">Read More</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </ng-container>
+            
+        </div>
+        </div>
+
+        
+    </div>
