@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-project',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+  config: any;
+  projects: any =[];
 
-  constructor() { }
+  constructor(private profileService:ProfileService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.projects = this.profileService.getProjects()
+    console.log(this.projects)
+    this.config = {
+      itemsPerPage: 2,
+      currentPage: 1,
+      totalItems: this.projects.length
+    };
   }
 
+  pageChanged(event: any){
+    this.config.currentPage = event;
+  }
 }
